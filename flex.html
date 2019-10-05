@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/9c3b109ccd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/flex.css">
     <script src="scripts/canvas.js" defer></script>
+    <script src="scripts/height.js" defer></script>
     <!-- favicon stuff -->
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
@@ -35,9 +36,44 @@
 </head>
 
 <body>
+    <header class="fixed">
+        <div class="move-content-right">
+            <a href="https://github.com/OliverLeitner" target="_blank">
+                <picture>
+                    <img src="images/social/github.png" alt="github">
+                </picture>
+            </a>
+            <a href="https://twitter.com/OliverNBLOG" target="_blank">
+                <picture>
+                    <img src="images/social/Twitter.svg" alt="twitter">
+                </picture>
+            </a>
+            <a href="https://neverslair-blog.net" target="_blank">
+                <picture>
+                    <img src="images/forpg_web-middle.png" alt="visit my page">
+                </picture>
+            </a>
+        </div>
+    </header>
     <div class="content">
-        <div class="left">left part</div>
-        <article class="middle">
+    <div class="scrollable-content">
+        <div class="left flex-item">
+            <nav>
+                <h2>Navigation</h2>
+                <ul>
+                    <li>
+                        <i class="fas fa-american-sign-language-interpreting"></i><a href="#">Link 1</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-american-sign-language-interpreting"></i><a href="#">Link 2</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-american-sign-language-interpreting"></i><a href="#">Link 3</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <article id="maincontent" class="middle flex-item">
             <section class="upper">
                 <div><i class="fa-stuff fas fa-bone"></i>upper part</div>
             </section>
@@ -131,7 +167,8 @@ posuere cubilia Curae; Nam libero ligula, pretium et lacinia quis, hendrerit ac 
                 <div>lower part</div>
             </section>
         </article>
-        <div class="right">right part</div>
+        <div class="right flex-item">right part</div>
+    </div>
     </div>
     <!-- animated background entry point -->
     <canvas id="my-background"></canvas>

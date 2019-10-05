@@ -3,6 +3,7 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14pt;
     color: #000;
+    overflow: hidden;
     /* prepping background image for future ... video */
     /*background: url(../images/background.jpg) no-repeat center center fixed;*/
     /*-webkit-background-size: cover;
@@ -14,7 +15,7 @@ html {
 /* body magic for centering content */
 body {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -63,19 +64,42 @@ p {
     margin-bottom: 10px;
 }
 
+a {
+    color: unset;
+    border: unset;
+    text-decoration: unset;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.fixed {
+    position: fixed;
+}
+
 .content {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    bottom: 0;
+    z-index: -5;
     background-color: azure;
     margin: 0 auto;
+    padding-top: 95px;
     width: 1024px;
+    /* space for the top menu thingy */
     /* flex for upper parts going left to right */
     display: flex;
+    flex-direction: column;
 }
 
 .left {
     background-color: aqua;
     order: 0;
     width: 200px;
-    padding: 10px;
 }
 
 .middle {
@@ -122,7 +146,7 @@ p {
     margin-bottom: 10px;
 }
 
-.middle-content>picture {
+.text-floating-with-picture-top-left>picture {
     background-color: #fff;
     box-shadow: 5px 6px 25px 0px #0ff;
     border: 1px solid #928282;
@@ -143,7 +167,6 @@ p {
     color: #fff;
     order: 2;
     width: 200px;
-    padding: 10px;
 }
 
 /* content styles */
@@ -289,4 +312,104 @@ h1::first-letter {
     color: #fff;
     font-size: 3em;
     margin-right: 1rem;
+}
+
+/* left-hand navigation */
+nav {
+    width: 100%;
+}
+
+nav h2 {
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding-left: 10px;
+    height: 25px;
+    border-bottom: 1px solid black;
+    margin-bottom: 1px;
+}
+
+nav ul li i {
+    color: plum;
+    font-size: 19pt;
+}
+
+nav ul li:nth-of-type(1) {
+    border-top: 1px solid black;
+}
+
+nav ul li a {
+    margin-left: 10px;
+}
+
+nav ul li:hover,
+nav ul li:active {
+    font-weight: bold;
+}
+
+/* messing with browser scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: red;
+    -moz-border-radius: 1em/1em;
+    border-radius: 1em/1em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkorange;
+}
+
+/* header area stuff */
+header {
+    float: left;
+    width: 100%;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
+}
+
+header div {
+    position: relative;
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin: 10px;
+}
+
+header a img {
+    max-height: 50px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+header a img:hover {
+    border: 1px solid #fff;
+}
+
+/* flex is tricky on scrolling i have to admit... */
+.scrollable-content {
+    overflow: auto;
+    /* for Firefox */
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    min-height: 100%;
 }
