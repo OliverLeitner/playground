@@ -51,6 +51,7 @@ h1 {
 h2 {
     font-size: 1.6em;
     margin-bottom: 10px;
+    font-family: 'Indie Flower', cursive;
 }
 
 h3 {
@@ -74,6 +75,7 @@ p {
     background-color: aqua;
     order: 0;
     width: 200px;
+    padding: 10px;
 }
 
 .middle {
@@ -96,6 +98,7 @@ p {
     background-color: brown;
     color: #fff;
     order: 0;
+    padding: 2rem;
 }
 
 .grid-container {
@@ -140,6 +143,7 @@ p {
     color: #fff;
     order: 2;
     width: 200px;
+    padding: 10px;
 }
 
 /* content styles */
@@ -270,4 +274,19 @@ canvas {
     to {
         opacity: 1;
     }
+}
+
+/* fing up the header */
+h1::first-letter {
+    letter-spacing: -10px;
+    color: #0ff;
+    font-size: 2em;
+    text-shadow: 2px 2px brown;
+}
+
+/* fontawesome fun */
+.fa-stuff {
+    color: #fff;
+    font-size: 3em;
+    margin-right: 1rem;
 }
