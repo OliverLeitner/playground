@@ -78,6 +78,7 @@ li {
 
 .fixed {
     position: fixed;
+    height: 75px;
 }
 
 .content {
@@ -85,11 +86,11 @@ li {
     top: 0;
     bottom: 0;
     left: 6vw;
-    right: 10%;
+    right: 6vw;
     z-index: -5;
     background-color: azure;
     margin: 0 auto;
-    padding-top: 95px;
+    padding-top: 96px;
     width: 1024px;
     /* space for the top menu thingy */
     /* flex for upper parts going left to right */
@@ -193,7 +194,22 @@ li {
 
 /* i want left and right disappear and middle full with on phones */
 @media (max-width: 600px) {
-    body, html { overflow: auto; }
+
+    body,
+    html {
+        overflow: auto;
+    }
+
+    header div.head-content-bodysize {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    header div.move-content-right {
+        margin-right: 0 !important;
+    }
+
     .content {
         width: 100%;
         position: relative;
@@ -392,19 +408,33 @@ nav ul li:active {
 }
 
 /* header area stuff */
-header {
+/*header {
     float: left;
     width: 100%;
     background-color: #000;
     border-bottom: 1px solid #fff;
+}*/
+
+header div.head-content-bodysize {
+    margin: 0 auto;
+    width: 1024px;
+    position: absolute;
+    left: 6vw;
+    right: 6vw;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
 }
 
-header div {
-    position: relative;
+header div.move-content-right {
     float: right;
-    margin: 0;
-    padding: 0;
-    margin: 10px;
+    padding: 10px;
+}
+
+header div.move-content-left {
+    color: #fff;
+    font-size: -webkit-xxx-large;
+    float: left;
+    padding: 10px;
 }
 
 header a img {
@@ -413,9 +443,9 @@ header a img {
     border: 1px solid black;
 }
 
-header a img:hover {
+/*header a img:hover {
     border: 1px solid #fff;
-}
+}*/
 
 /* flex is tricky on scrolling i have to admit... */
 .scrollable-content {
