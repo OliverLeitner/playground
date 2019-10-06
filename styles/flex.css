@@ -83,8 +83,9 @@ li {
 .content {
     position: absolute;
     top: 0;
-    left: 10%;
     bottom: 0;
+    left: 6vw;
+    right: 10%;
     z-index: -5;
     background-color: azure;
     margin: 0 auto;
@@ -192,8 +193,11 @@ li {
 
 /* i want left and right disappear and middle full with on phones */
 @media (max-width: 600px) {
+    body, html { overflow: auto; }
     .content {
         width: 100%;
+        position: relative;
+        left: 0;
     }
 
     .right {
@@ -219,7 +223,16 @@ li {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px;
-        padding: 0;
+        padding: unset;
+        max-width: 400px;
+    }
+
+    canvas {
+        display: none;
+    }
+
+    .scrollable-content {
+        overflow: hidden !important;
     }
 }
 
