@@ -76,11 +76,6 @@ li {
     padding: 0;
 }
 
-.fixed {
-    position: fixed;
-    height: 75px;
-}
-
 .content {
     position: absolute;
     top: 0;
@@ -406,14 +401,6 @@ nav ul li:active {
 ::-webkit-scrollbar-thumb:hover {
     background: darkorange;
 }
-
-/* header area stuff */
-/*header {
-    float: left;
-    width: 100%;
-    background-color: #000;
-    border-bottom: 1px solid #fff;
-}*/
 
 header div.head-content-bodysize {
     margin: 0 auto;
