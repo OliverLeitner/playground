@@ -3,13 +3,13 @@
  * no need for jquery...
  */
 var content = document.getElementById("maincontent");
+var spacing = 12;
 var scHeight = content.scrollHeight;
-var height = scHeight - content.clientHeight;
+var height = scHeight - content.clientHeight - spacing;
 
 // firefox does stuff a little bit different
 var browser = navigator.userAgent;
 if (!browser.includes("Chrome")) {
-    console.log("we are firefox");
     height = height + 300;
 }
 
